@@ -1,0 +1,42 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 204, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 456, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
+    renpy.load("_reload-2")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 204, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 456, in script
+    python hide:
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 912, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2004, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/00keymap.rpy", line 456, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
+    renpy.load("_reload-2")
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\loadsave.py", line 761, in load
+    log.unfreeze(roots, label="_after_load")
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1959, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1791, in rollback
+    self.load_failed()
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1709, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+
+Windows-8-6.2.9200
+Ren'Py 7.3.2.320
+bab bab literacy cloob 0.00001
+Sat Jul 27 14:57:04 2019

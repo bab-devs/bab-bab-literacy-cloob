@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 37: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        keek "owo what's this?
+
+Ren'Py Version: Ren'Py 7.3.2.320
+Sat Jul 27 14:56:28 2019
