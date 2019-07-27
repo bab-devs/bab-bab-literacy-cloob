@@ -1,26 +1,46 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
+﻿## Declare character beeps
+init python:
+    def low_beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("sfx/low_beep.mp3", channel=3, loop=True)
+        elif event == "slow_done" or event == "end":
+             renpy.music.stop(channel=3)
+        
+    def beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("sfx/beep.mp3", channel=3, loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel=3)
+            
+    def high_beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("sfx/high_beep.mp3", channel=3, loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel=3)
+            
+## Declare characters used by this game
+## Yourself
 define h = Character(what_italic=True)
 define u = Character("[name]", color="#ff0086")
-define who = Character("???", color="#ffffff", what_size=18)
-define bab = Character("bab", color="#ffffff")
-define keek = Character("keek", color="ff351f")
 
+## Characters
+define who = Character("???", color="#ffffff", what_size=18)
+define bab = Character("bab", color="#ffffff", callback=beep)
+define keek = Character("keek", color="ff351f", callback=low_beep)
+
+## Declare audio used by this game
 define audio.move = "sfx/move.mp3"
 
 
-# The game starts here.
 
+## The game starts here
 label start:
 
-    h "oh god oh hecc where am i"
+    stop music
     
+    h "Oh god, oh heck. Where am I?"
     who "helo i m bab"
-    
-    h "what the hecc was that"
+    h "What the hell was that?!" with hpunch 
     
     play sound move
     show bab wave with moveinbottom
@@ -43,5 +63,14 @@ label start:
     u "im [u]"
     bab "hi [u]"
     u "hi bab & keek"
+    bab "welcum to the bab bab literacy cloob!!" (multiple=2)
+    keek "welcum to the bab bab literacy cloob!!" (multiple=2)
+    who "wake up"
+    
+    scene bg home
+    stop music
+    
+    u "what the hecc was that"
+    h "I just had the strangest dream."
 
     return

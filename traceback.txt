@@ -1,42 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 204, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 456, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 456, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
-    renpy.load("_reload-2")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "game/script.rpy", line 33, in script
+    play sound move
+  File "game/script.rpy", line 4, in low_beep
+    define who = Character("???", color="#ffffff", what_size=18)
+Exception: Audio channel u'beep' is unknown.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 204, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 456, in script
-    python hide:
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 912, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2004, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/00keymap.rpy", line 456, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 466, in _execute_python_hide
-    renpy.load("_reload-2")
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\loadsave.py", line 761, in load
-    log.unfreeze(roots, label="_after_load")
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1959, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1791, in rollback
-    self.load_failed()
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 1709, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "game/script.rpy", line 33, in script
+    play sound move
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1336, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1139, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 538, in display_say
+    c("show", interact=interact, type=type, **cb_args)
+  File "game/script.rpy", line 4, in low_beep
+    define who = Character("???", color="#ffffff", what_size=18)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\audio\music.py", line 91, in play
+    c = get_channel(channel)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 784, in get_channel
+    raise Exception("Audio channel %r is unknown." % name)
+Exception: Audio channel u'beep' is unknown.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
-bab bab literacy cloob 0.00001
-Sat Jul 27 14:57:04 2019
+bab bab literacy cloob v0.1
+Sat Jul 27 20:08:42 2019

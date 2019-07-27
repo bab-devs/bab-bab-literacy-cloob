@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.00001"
+define config.version = "v0.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -56,14 +56,14 @@ define config.has_voice = True
 ## uncomment a line below and use it to set a sample sound to play.
 
 define config.sample_sound = "sfx/rule.mp3"
-#define config.sample_voice = "sfx/move.mp3"
+define config.sample_voice = "sfx/beep.mp3"
 
 
 ## Uncomment the following line to set an audio file that will be played while
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "music/bab be u them REEEMAZTUR.mp3"
 
 
 ## Transitions #################################################################
