@@ -22,18 +22,18 @@ label start:
     
     h "what the hecc was that"
     
-    show bab wave with moveinbottom
     play sound move
-    play music "music/ohayu_bab.mp3" fadeout 1
+    show bab wave with moveinbottom
+    play music "music/ohayu_bab.ogg" fadeout 1
     
     bab "it be i, bab"
-    bab "and this be keek"
     
+    play sound move
     show bab neutral at left with move
     play sound move
     show keek neutral at right with moveinright
-    play sound move
     
+    bab "and this be keek"
     keek "owo what's this?"
     
     python: 
