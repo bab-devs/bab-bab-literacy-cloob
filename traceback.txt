@@ -1,36 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 33, in script
-    play sound move
-  File "game/script.rpy", line 4, in low_beep
-    define who = Character("???", color="#ffffff", what_size=18)
-Exception: Audio channel u'beep' is unknown.
+  File "game/script.rpy", line 56, in script
+    bab wave "and this be keek"
+Exception: Say has image attributes (u'wave',), but there's no image tag associated with the speaking character.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 33, in script
-    play sound move
+  File "game/script.rpy", line 56, in script
+    bab wave "and this be keek"
   File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1336, in say
     who(what, *args, **kwargs)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1139, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 842, in do_display
-    **display_args)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 538, in display_say
-    c("show", interact=interact, type=type, **cb_args)
-  File "game/script.rpy", line 4, in low_beep
-    define who = Character("???", color="#ffffff", what_size=18)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\audio\music.py", line 91, in play
-    c = get_channel(channel)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 784, in get_channel
-    raise Exception("Audio channel %r is unknown." % name)
-Exception: Audio channel u'beep' is unknown.
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1075, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 942, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 868, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes (u'wave',), but there's no image tag associated with the speaking character.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 bab bab literacy cloob v0.1
-Sat Jul 27 20:08:42 2019
+Sun Jul 28 10:33:10 2019

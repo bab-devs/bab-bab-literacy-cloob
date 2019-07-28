@@ -30,8 +30,7 @@ define keek = Character("keek", color="ff351f", callback=low_beep)
 
 ## Declare audio used by this game
 define audio.move = "sfx/move.mp3"
-
-
+define audio.hit = "sfx/hit.mp3"
 
 ## The game starts here
 label start:
@@ -39,7 +38,8 @@ label start:
     stop music
     
     h "Oh god, oh heck. Where am I?"
-    who "helo i m bab"
+    who "helo i m bab" (callback=beep)
+    play sound hit
     h "What the hell was that?!" with hpunch 
     
     play sound move
@@ -53,7 +53,7 @@ label start:
     play sound move
     show keek neutral at right with moveinright
     
-    bab "and this be keek"
+    bab @ wave "and this be keek"   
     keek "owo what's this?"
     
     python: 

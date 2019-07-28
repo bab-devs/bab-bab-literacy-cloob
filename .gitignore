@@ -5,3 +5,9 @@ log.txt
 *.json
 game/saves/persistent
 *.txt
+*.save
+*.rpyb
+*.json
+game/saves/persistent
+*.txt
+*.txt
