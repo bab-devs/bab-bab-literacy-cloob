@@ -20,13 +20,13 @@ init python:
             
 ## Declare characters used by this game
 ## Yourself
-define h = Character(what_italic=True)
+define narrator = Character(what_italic=True)
 define u = Character("[name]", color="#ff0086")
 
 ## Characters
 define who = Character("???", color="#ffffff", what_size=18)
-define bab = Character("bab", color="#ffffff", callback=beep)
-define keek = Character("keek", color="ff351f", callback=low_beep)
+define bab = Character("Bab", color="#ffffff", callback=beep)
+define keek = Character("Keek", color="ff351f", callback=low_beep)
 
 ## Declare audio used by this game
 define audio.move = "sfx/move.mp3"
@@ -37,40 +37,37 @@ label start:
 
     stop music
     
-    h "Oh god, oh heck. Where am I?"
-    who "helo i m bab" (callback=beep)
-    play sound hit
-    h "What the hell was that?!" with hpunch 
-    
-    play sound move
-    show bab wave with moveinbottom
-    play music "music/ohayu_bab.ogg" fadeout 1
-    
-    bab "it be i, bab"
-    
-    play sound move
-    show bab neutral at left with move
-    play sound move
-    show keek neutral at right with moveinright
-    
-    bab @ wave "and this be keek"   
-    keek "owo what's this?"
+    "..."
+    "Where in the world am I?"
+    who "Psst..." (callback=low_beep)
+    "There's something behind me... or someone."
+    who "I only have one very simple question for you." (callback=low_beep)
     
     python: 
-        u = renpy.input("what ur name be?")
+        u = renpy.input("What is your name?")
         u = u.strip() or "u"
     
-    u "im [u]"
-    bab "hi [u]"
-    u "hi bab & keek"
-    bab "welcum to the bab bab literacy cloob!!" (multiple=2)
-    keek "welcum to the bab bab literacy cloob!!" (multiple=2)
-    who "wake up"
+    who "[u], huh? That's a nice name.\nIt'd be a shame if something happened to it though..." (callback=low_beep)
+    
+    play sound hit
+    u "What do you want?!" with hpunch 
+    who "I just wanted your name,\nnow that I have it, you can wake up now." (callback=low_beep)
     
     scene bg home
-    stop music
     
-    u "what the hecc was that"
-    h "I just had the strangest dream."
+    u "What was that about..."
+    "I just had the strangest dream."
+    
+    bab "Heyyyyyyyy"
+    "I see a fluffy human waving at me as she quickly skips toward me."
+    show bab wave with moveinright
+    play sound move
+    play music "music/ohayu_bab.ogg" fadeout 1
+    show bab neutral
+    
+    u "Good morning, Bab."
+    "This is Bab, my friend since we were children."
+    "...She does look a little odd for a human girl."
+    bab "hows it goin, [u!l]"
 
     return

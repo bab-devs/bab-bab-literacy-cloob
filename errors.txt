@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 7: expected an indented block
-        renpy.music.stop(channel=3)
-             ^
-    
+File "game/script.rpy", line 23: expected 'word' not found.
+    define \n = Character(what_italic=True)
+           ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Sat Jul 27 20:25:03 2019
+Fri Aug 02 01:30:00 2019

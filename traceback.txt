@@ -2,27 +2,29 @@
 
 While running game code:
   File "game/script.rpy", line 56, in script
-    bab wave "and this be keek"
-Exception: Say has image attributes (u'wave',), but there's no image tag associated with the speaking character.
+    scene bg home with fade(0)
+TypeError: Fade() takes at least 3 arguments (3 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 56, in script
-    bab wave "and this be keek"
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1336, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1075, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 942, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 868, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes (u'wave',), but there's no image tag associated with the speaking character.
+    scene bg home with fade(0)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1387, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1592, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 2248, in do_with
+    clear=clear)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 2699, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 3044, in interact_core
+    new_widget=layers_root)
+  File "C:\Users\Cynthia\Downloads\renpy-7.3.2-sdk\renpy\curry.py", line 43, in __call__
+    **dict(self.kwargs.items() + kwargs.items()))
+TypeError: Fade() takes at least 3 arguments (3 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
-bab bab literacy cloob v0.1
-Sun Jul 28 10:33:10 2019
+bab bab literacy cloob v0.00000000000000000000001
+Fri Aug 02 01:21:00 2019
