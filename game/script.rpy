@@ -40,8 +40,9 @@ label start:
     "..."
     "Where in the world am I?"
     who "Psst..." (callback=low_beep)
-    "There's something behind me... or someone."
-    who "I only have one very simple question for you." (callback=low_beep)
+    "There's something... or someone... behind me."
+    "But I'm having trouble turning around."
+    who "I have a question for you." (callback=low_beep)
     
     python: 
         u = renpy.input("What is your name?")
@@ -49,6 +50,7 @@ label start:
     
     who "[u], huh? That's a nice name.\nIt'd be a shame if something happened to it though..." (callback=low_beep)
     
+    u "What does that even mean?"
     play sound hit
     u "What do you want?!" with hpunch 
     who "I just wanted your name,\nnow that I have it, you can wake up now." (callback=low_beep)
@@ -57,6 +59,7 @@ label start:
     
     u "What was that about..."
     "I just had the strangest dream."
+    u "Oh! Time to get ready for school!"
     
     bab "Heyyyyyyyy"
     "I see a fluffy human waving at me as she quickly skips toward me."
